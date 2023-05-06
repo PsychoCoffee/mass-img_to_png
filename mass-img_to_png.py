@@ -20,14 +20,14 @@ if '"' in output_folder:
 os.makedirs(output_folder, exist_ok=True)
 
 # Count number of image files
-num_files = sum(1 for f in os.listdir(input_folder) if f.lower().endswith((".tiff", ".tif", ".jpg", ".jpeg", ".bmp")))
+num_files = sum(1 for f in os.listdir(input_folder) if f.lower().endswith((".tiff", ".tif", ".jpg", ".jpeg", ".bmp", ".png")))
 
 # Counter for image files
 count = 0
 
 for filename in os.listdir(input_folder):
     a = filename.lower()
-    if a.endswith(".tiff") or a.endswith(".tif") or a.endswith(".jpg") or a.endswith(".jpeg") or a.endswith(".bmp"):
+    if a.endswith(".tiff") or a.endswith(".tif") or a.endswith(".jpg") or a.endswith(".jpeg") or a.endswith(".bmp") or a.endswith(".png"):
         count += 1
         percentage = round((count / num_files) * 100)
         progress = f"{count}/{num_files} - {percentage}% | {filename}"
